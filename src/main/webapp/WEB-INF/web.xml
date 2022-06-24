@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>NongDamGomPage</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+
+<!-- 오라클 접속 정보를 컨텍스트 초기화 파라미터로 등록 --> 
+  <context-param>
+  	<param-name>OracleDriver</param-name>
+  	<param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OracleURL</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OracleId</param-name>
+  	<param-value>nongdamgom</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OraclePwd</param-name>
+  	<param-value>7727</param-value>
+  </context-param>
+  
+  <!-- 세션유지시간 설정 : web.xml에서는 분단위로 지정한다. 30분 -->
+  <session-config>
+  	<session-timeout>30</session-timeout>
+  </session-config>
+  
+  <!-- 한글깨짐에 대한 필터설정 : 현재 개발중인 웹 애플리케이션 전체에 적용한다.
+  		웹애플리케이션으로 들어오는 모든 요청에 대해 문자 인코딩을 UTF-8로 하겠다는
+  		필터 설정이다. -->
+  <filter>
+    <filter-name>SetCharEncoding</filter-name>
+    <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+      <init-param>
+        <param-name>encoding</param-name>
+        <param-value>utf-8</param-value>
+      </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>SetCharEncoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGRegist</servlet-name>
+  	<servlet-class>ndgController.NDGRegistController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGRegist</servlet-name>
+  	<url-pattern>/regist.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGLogin</servlet-name>
+  	<servlet-class>ndgController.NDGLoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGLogin</servlet-name>
+  	<url-pattern>/login.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGList</servlet-name>
+  	<servlet-class>ndgController.NDGListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGList</servlet-name>
+  	<url-pattern>/list.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</web-app>
+  
