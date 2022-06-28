@@ -10,7 +10,6 @@ public class ndgmemberDTO {
 	private String address;
 	private String email;
 	private String mobile;
-	
 	private java.sql.Date regidate;
 
 	public String getUserid() {

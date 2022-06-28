@@ -107,6 +107,7 @@
         }
     } 
     function idCheck(form){
+    	
     	alert("아이디 중복체크는 하지않습니다.");
     }
     function inputEmail(form){
@@ -132,31 +133,27 @@
 <body>
 <body>
 	<div class="p-5 text-white text-center" style="background-color: #B4E8E6">
-		<a href="main.jsp"><img src="./images/simple.png" alt="기본당곰얼굴" width="70px" height="60px"/><img src="./images/logo2.png" alt="상단로고2" height="55px"/></a>
+		<a href="./02Normal/main.jsp"><img src="./images/simple.png" alt="기본당곰얼굴" width="70px" height="60px"/><img src="./images/logo2.png" alt="상단로고2" height="55px"/></a>
 	</div>
 	
 	<nav class="navbar navbar-expand-sm" style="background-color: #FFFED9">
 	  	<div class="container-fluid justify-content-center">
 		    <ul class="navbar-nav">
 		      	<li class="nav-item">
-		        	<a class="nav-link active" href="notice.jsp" 
+		        	<a class="nav-link active" href="./02Normal/notice.jsp" 
 		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">공지사항</a>
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link active" href="introduce.jsp" 
+		        	<a class="nav-link active" href="./02Normal/introduce.jsp" 
 		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">소개</a>
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link active" href="shop.jsp" 
+		        	<a class="nav-link active" href="./02Normal/shop.jsp" 
 		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">상품판매</a>
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link active" href="board.jsp" 
+		        	<a class="nav-link active" href="./list.do" 
 		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">게시판</a>
-		      	</li>
-		      	<li class="nav-item">
-		        	<a class="nav-link" href="#" 
-		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">추천좀</a>
 		      	</li>
 		    </ul>
 	  	</div>
@@ -164,7 +161,7 @@
 		    <a href="./buy.jsp"><img src="./images/buy.png" alt="장바구니" width="65px;" height="70px" /></a> -->
 	</nav>
 	<div class="container-fluid" style="background-color: rgb(252, 252, 249);">
-		<form action="../regist.do" method="post" name="registFrm" onsubmit="return registValdidate(this)">
+		<form action="./regist.do" method="post" name="registFrm" onsubmit="return registValdidate(this)">
 			<div class="AllWrap">
 			    <div class="wrap_regiform">
 			    	<span style="color: black; font-weight: bold;"> 

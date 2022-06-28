@@ -49,6 +49,25 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   
+  <!-- 게시판 페이징 처리를 위한 파라미터 추가 -->
+  <!-- 한 페이지에 출력할 게시물의 갯수 -->
+  <context-param>
+  	<param-name>POSTS_PER_PAGE</param-name>
+  	<param-value>5</param-value>
+  </context-param>
+  <!-- 한 블럭당 출력할 페이지번호의 갯수 -->
+  <context-param>
+  	<param-name>PAGES_PER_BLOCK</param-name>
+  	<param-value>2</param-value>
+  </context-param>
+  
+  <!-- 파일 업로드 제한용량 : 10메가 -->
+  <context-param>
+  	<param-name>maxPostSize</param-name>
+  	<param-value>10240000</param-value>
+  </context-param>
+  
+  
   <servlet>
   	<servlet-name>NDGRegist</servlet-name>
   	<servlet-class>ndgController.NDGRegistController</servlet-class>
@@ -75,6 +94,200 @@
   	<servlet-name>NDGList</servlet-name>
   	<url-pattern>/list.do</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGAdminList</servlet-name>
+  	<servlet-class>ndgController.NDGListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGAdminList</servlet-name>
+  	<url-pattern>/01Admin/adminlist.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGList2</servlet-name>
+  	<servlet-class>ndgController.NDGListController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGList2</servlet-name>
+  	<url-pattern>/fanlist.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGAdminList2</servlet-name>
+  	<servlet-class>ndgController.NDGListController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGAdminList2</servlet-name>
+  	<url-pattern>/01Admin/adminlist2.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGWrite</servlet-name>
+  	<servlet-class>ndgController.NDGWriteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGWrite</servlet-name>
+  	<url-pattern>/write.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGWrite2</servlet-name>
+  	<servlet-class>ndgController.NDGWriteController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGWrite2</servlet-name>
+  	<url-pattern>/fanwrite.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGView</servlet-name>
+  	<servlet-class>ndgController.NDGViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGView</servlet-name>
+  	<url-pattern>/view.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGAdminView</servlet-name>
+  	<servlet-class>ndgController.NDGViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGAdminView</servlet-name>
+  	<url-pattern>/01Admin/adminview.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGView2</servlet-name>
+  	<servlet-class>ndgController.NDGViewController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGView2</servlet-name>
+  	<url-pattern>/fanview.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGAdminView2</servlet-name>
+  	<servlet-class>ndgController.NDGViewController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGAdminView2</servlet-name>
+  	<url-pattern>/01Admin/adminview2.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>NDGEdit</servlet-name>
+  	<servlet-class>ndgController.NDGEditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGEdit</servlet-name>
+  	<url-pattern>/edit.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGEdit2</servlet-name>
+  	<servlet-class>ndgController.NDGEditController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGEdit2</servlet-name>
+  	<url-pattern>/fanedit.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGPass</servlet-name>
+  	<servlet-class>ndgController.NDGPassController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGPass</servlet-name>
+  	<url-pattern>/pass.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGPass2</servlet-name>
+  	<servlet-class>ndgController.NDGPassController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGPass2</servlet-name>
+  	<url-pattern>/fanpass.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGDownload</servlet-name>
+  	<servlet-class>ndgController.NDGDownloadController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGDownload</servlet-name>
+  	<url-pattern>/download.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGDownload2</servlet-name>
+  	<servlet-class>ndgController.NDGDownloadController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGDownload2</servlet-name>
+  	<url-pattern>/fandownload.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGAdminDelete</servlet-name>
+  	<servlet-class>ndgController.NDGDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGAdminDelete</servlet-name>
+  	<url-pattern>/01Admin/admindelete.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGAdminDelete2</servlet-name>
+  	<servlet-class>ndgController.NDGDeleteController2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGAdminDelete2</servlet-name>
+  	<url-pattern>/01Admin/admindelete2.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>NDGMemberList</servlet-name>
+  	<servlet-class>ndgController.NDGmemberListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGMemberList</servlet-name>
+  	<url-pattern>/01Admin/memberlist.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGMemberView</servlet-name>
+  	<servlet-class>ndgController.NDGmemberViewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGMemberView</servlet-name>
+  	<url-pattern>/01Admin/memberview.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>NDGMemberEdit</servlet-name>
+  	<servlet-class>ndgController.NDGmemberEditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGMemberEdit</servlet-name>
+  	<url-pattern>/01Admin/memberedit.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>NDGMemberDelete</servlet-name>
+  	<servlet-class>ndgController.NDGmemberDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NDGMemberDelete</servlet-name>
+  	<url-pattern>/01Admin/memberdelete.do</url-pattern>
+  </servlet-mapping>
+  
+  
+ 
+  
   
   
   

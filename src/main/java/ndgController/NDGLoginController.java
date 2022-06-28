@@ -9,11 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import utils.JSFunction;
+
 public class NDGLoginController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("./02Normal/login.jsp").forward(req, resp);
+		req.getRequestDispatcher("/02Normal/login.jsp").forward(req, resp);
 	}
 
 	@Override

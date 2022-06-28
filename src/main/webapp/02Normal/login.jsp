@@ -30,31 +30,27 @@ function loginValdidate(form){
 <body>
 <body>
 	<div class="p-5 text-white text-center" style="background-color: #B4E8E6">
-		<a href="main.jsp"><img src="./images/simple.png" alt="기본당곰얼굴" width="70px" height="60px"/><img src="./images/logo2.png" alt="상단로고2" height="55px"/></a>
+		<a href="./02Normal/main.jsp"><img src="./images/simple.png" alt="기본당곰얼굴" width="70px" height="60px"/><img src="./images/logo2.png" alt="상단로고2" height="55px"/></a>
 	</div>
 	
 	<nav class="navbar navbar-expand-sm" style="background-color: #FFFED9">
 	  	<div class="container-fluid justify-content-center">
 		    <ul class="navbar-nav">
 		      	<li class="nav-item">
-		        	<a class="nav-link active" href="notice.jsp" 
+		        	<a class="nav-link active" href="./02Normal/notice.jsp" 
 		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">공지사항</a>
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link active" href="introduce.jsp" 
+		        	<a class="nav-link active" href="./02Normal/introduce.jsp" 
 		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">소개</a>
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link active" href="shop.jsp" 
+		        	<a class="nav-link active" href="./02Normal/shop.jsp" 
 		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">상품판매</a>
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link active" href="board.jsp" 
+		        	<a class="nav-link active" href="./list.do" 
 		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">게시판</a>
-		      	</li>
-		      	<li class="nav-item">
-		        	<a class="nav-link" href="#" 
-		        	style="color: black; font-family:한컴 백제 B; font-size: 20px">추천좀</a>
 		      	</li>
 		    </ul>
 	  	</div>
@@ -73,7 +69,7 @@ function loginValdidate(form){
                     </tr>
                 </table> -->
                 <!-- 폼태그여기따!!! 어디로 가는지 여기있다!!! -->
-                <form name="loginFrm" action="../login.do" method="post" onsubmit="return loginValdidate(this);">
+                <form name="loginFrm" action="./login.do" method="post" onsubmit="return loginValdidate(this);">
                 <table width="470" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                         <td width="350">
@@ -99,11 +95,11 @@ function loginValdidate(form){
                     <tr>
                     	<!-- 회원가입페이지로 넘어감 -->
                         <td align="left">
-                            <a href="regist.jsp" onClick=""><img src="./images/login_member.gif" alt="아직도 회원이 아니세요?" /></a>
+                            <a href="./regist.do" onClick=""><img src="./images/login_member.gif" alt="아직도 회원이 아니세요?" /></a>
                         </td>
                         <!-- 아이디/비밀번호 찾는 기능 만들어야 함 -->
                         <td colspan="2">
-                            <a href="#" onClick=""><img src="./images/login_idpw.gif" alt="아이디/비밀번호를 잊어버리셨어요?" /></a>
+                            <!-- <a href="#" onClick=""><img src="./images/login_idpw.gif" alt="아이디/비밀번호를 잊어버리셨어요?" /></a> -->
                         </td>
                     </tr>
                 </table>
